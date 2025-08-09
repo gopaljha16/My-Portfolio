@@ -1,12 +1,47 @@
-# React + Vite
+# Portfolio — React + Vite + Tailwind
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern, minimal portfolio with dark/light theme, smooth animations, and responsive design. Built with React, Tailwind, and Framer Motion (Motion One). Ready for Vercel/Netlify.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Dark/Light mode toggle (persist via Redux state — adapt as needed)
+- Animated hero, sections, and interactions (Motion One)
+- Reusable components and glassmorphism accents
+- Responsive layout, SEO tags, lazy images
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Install deps:
+
+```
+npm install
+```
+
+2. Start dev server:
+
+```
+npm run dev
+```
+
+3. Build for production:
+
+```
+npm run build && npm run preview
+```
+
+## Configure
+
+- Update links in `src/components/Contact.jsx` and `src/components/Projects.jsx`.
+- Replace placeholder images with local assets in `src/assets/` if preferred.
+- Change site title/description in `index.html`.
+
+## Deploy
+
+- Vercel: import repo and deploy (Vite static output).
+- Netlify: set build command `npm run build` and publish directory `dist`.
+
+## Structure
+
+- Components in `src/components/`
+- Global styles in `src/index.css`
+- Theme state in `src/slice/setTheme.js`

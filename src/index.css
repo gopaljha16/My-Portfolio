@@ -1,1 +1,137 @@
 @import "tailwindcss";
+
+:root {
+  --surface: 12, 12, 18;
+  --glass: 255, 255, 255;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(1200px 800px at 80% -10%, rgba(129, 140, 248, 0.12), transparent 60%),
+    radial-gradient(900px 600px at -10% 20%, rgba(236, 72, 153, 0.10), transparent 55%);
+}
+
+.typewriter {
+  display: inline-block;
+  min-width: 12ch;
+}
+
+.type-caret {
+  display: inline-block;
+  width: 1ch;
+  margin-left: 2px;
+  color: currentColor;
+  animation: caret-blink 1s step-end infinite;
+}
+
+@keyframes caret-blink {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.15);
+  }
+
+  50% {
+    box-shadow: 0 0 0 10px rgba(99, 102, 241, 0.08);
+  }
+}
+
+.border-animated {
+  background: linear-gradient(90deg, rgba(129, 140, 248, .8), rgba(59, 130, 246, .8), rgba(34, 211, 238, .8));
+  background-size: 200% 200%;
+  border-radius: 1.9rem;
+  animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.glass {
+  background: rgba(var(--glass), 0.06);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.neuro {
+  box-shadow:
+    8px 8px 24px rgba(0, 0, 0, 0.35),
+    -8px -8px 24px rgba(255, 255, 255, 0.06);
+}
+
+.gradient-text {
+  background: linear-gradient(92deg, #a78bfa 0%, #60a5fa 45%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ring-glow {
+  box-shadow: 0 0 0 6px rgba(99, 102, 241, 0.15);
+}
+
+.container-px {
+  padding-left: clamp(1rem, 5vw, 4rem);
+  padding-right: clamp(1rem, 5vw, 4rem);
+}
+
+.section {
+  padding-top: clamp(3rem, 7vw, 6rem);
+  padding-bottom: clamp(3rem, 7vw, 6rem);
+}
+
+.btn {
+  @apply inline-flex items-center gap-2 rounded-xl px-5 py-3 font-medium transition-all duration-300 ease-out;
+}
+
+.btn-primary {
+  @apply bg-indigo-500 text-white hover:bg-indigo-400 active:bg-indigo-600 shadow-lg shadow-indigo-500/20;
+}
+
+.btn-ghost {
+  @apply bg-white/5 hover:bg-white/10 text-current border border-white/10;
+}
+
+.badge {
+  @apply inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-current;
+}
+
+.card {
+  @apply rounded-2xl border border-white/10 shadow-xl shadow-black/20;
+  background: rgba(var(--glass), 0.06);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+}
